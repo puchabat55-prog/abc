@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeanCraft - 신선한 커피 구독 서비스</title>
+<style>
+/* 기본 스타일 및 색상 팔레트 */
+:root {
+    --dark-brown: #3e2723;
+    --cream-beige: #f5f5dc;
+    --mint: #3eb489;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--cream-beige);
+    color: var(--dark-brown);
+    line-height: 1.6;
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--dark-brown);
+    color: var(--cream-beige);
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: var(--cream-beige);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-image: url('https://source.unsplash.com/1600x900/?coffee');
+    background-size: cover;
+    background-position: center;
+    color: var(--cream-beige);
+}
+
+.hero-content {
+    max-width: 600px;
+    background-color: rgba(62, 39, 35, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+}
+
+.hero .cta-btn {
+    padding: 0.8rem 2rem;
+    background-color: var(--mint);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 특징 카드 */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 300px;
+    flex: 1 1 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-card img {
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+/* 제품 카드 */
+.products {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.products h2 {
+    margin-bottom: 2rem;
+}
+
+.product-card {
+    display: inline-block;
+    width: 250px;
+    margin: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+}
+
+.product-card .info {
+    padding: 1rem;
+    background-color: white;
+}
+
+.product-card .info h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* 후기 */
+.testimonials {
+    background-color: var(--dark-brown);
+    color: var(--cream-beige);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.testimonial-card {
+    max-width: 600px;
+    margin: 1rem auto;
+    background-color: rgba(245,245,220,0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+/* CTA 배너 */
+.cta-banner {
+    background-color: var(--mint);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.cta-banner input[type="email"] {
+    padding: 0.8rem;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+.cta-banner button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-brown);
+    color: white;
+    cursor: pointer;
+}
+
+/* FAQ */
+.faq {
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: var(--cream-beige);
+    border-radius: 5px;
+}
+
+.faq-item p {
+    display: none;
+    padding: 0.5rem 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-brown);
+    color: var(--cream-beige);
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* 반응형 */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+    }
+    .hero-content {
+        margin-top: 0;
+    }
+    .features {
+        justify-content: space-around;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>BeanCraft</h1>
+    <nav>
+        <a href="#features">혜택</a>
+        <a href="#products">제품</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>신선한 커피, 매일의 행복</h2>
+        <p>72시간 내 로스팅된 원두, 첫 구독 40% 할인, 무료 익일 배송까지!</p>
+        <button class="cta-btn">지금 구독하기</button>
+    </div>
+</section>
+
+<section id="features" class="features">
+    <div class="feature-card">
+        <img src="https://source.unsplash.com/80x80/?coffee-beans" alt="신선 원두">
+        <h3>신선 원두</h3>
+        <p>72시간 내 로스팅으로 최상의 맛을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+        <img src="https://source.unsplash.com/80x80/?discount" alt="첫 구독 40% 할인">
+        <h3>첫 구독 40% 할인</h3>
+        <p>첫 구독 시 특별 할인 혜택을 제공합니다.</p>
+    </div>
+    <div class="feature-card">
+        <img src="https://source.unsplash.com/80x80/?delivery" alt="무료 익일 배송">
+        <h3>무료 익일 배송</h3>
+        <p>빠르고 안전한 익일 배송으로 신선함을 유지합니다.</p>
+    </div>
+</section>
+
+<section id="products" class="products">
+    <h2>추천 제품</h2>
+    <div class="product-card">
+        <img src="https://source.unsplash.com/250x250/?coffee-cup" alt="제품1">
+        <div class="info">
+            <h3>아로마 블렌드</h3>
+            <p>부드러운 향과 깊은 맛의 블렌드 커피</p>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="https://source.unsplash.com/250x250/?espresso" alt="제품2">
+        <div class="info">
+            <h3>에스프레소 로스트</h3>
+            <p>강렬한 풍미의 진한 에스프레소 원두</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>고객 후기</h2>
+    <div class="testimonial-card">
+        <p>"BeanCraft 덕분에 아침마다 신선한 커피를 즐기고 있습니다!"</p>
+        <strong>- 김커피</strong>
+    </div>
+    <div class="testimonial-card">
+        <p>"빠른 배송과 향긋한 원두, 정말 만족스러워요."</p>
+        <strong>- 이원두</strong>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <h2>최신 소식과 혜택을 받아보세요!</h2>
+    <form>
+        <input type="email" placeholder="이메일 입력">
+        <button type="submit">구독하기</button>
+    </form>
+</section>
+
+<section id="faq" class="faq">
+    <h2>자주 묻는 질문</h2>
+    <div class="faq-item">
+        <h3>구독 취소는 언제든 가능한가요?</h3>
+        <p>네, 구독은 언제든지 온라인에서 간편하게 취소하실 수 있습니다.</p>
+    </div>
+    <div class="faq-item">
+        <h3>배송은 얼마나 걸리나요?</h3>
+        <p>주문 후 익일 배송으로 빠르게 받아보실 수 있습니다.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 BeanCraft. All rights reserved.</p>
+</footer>
+
+<script>
+// FAQ 토글 기능
+document.querySelectorAll('.faq-item h3').forEach(item => {
+    item.addEventListener('click', () => {
+        const p = item.nextElementSibling;
+        p.style.display = p.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
+
+</body>
+</html>
